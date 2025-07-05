@@ -4,4 +4,5 @@ import java.util.*;
 
 public interface PlayerRepository{
     List<Player> getPlayersData();
+    Player addPlayer(Player player);
 }

@@ -15,11 +15,15 @@ import java.util.List;
 @RestController
 public class PlayerController {
 
-    PlayerService playerService = new PlayerService(); // Create an instance
+    PlayerService playerService = new PlayerService(); 
 
     @GetMapping("/players")
     public List<Player> getPlayers() {
-        return playerService.getPlayersData(); // Call instance method
+        return playerService.getPlayersData(); 
+    }
+    @PostMapping("/players")
+    public Player addPlayer(@RequestBody Player player){
+        return playerService.addPlayer(player);
     }
 }
 
