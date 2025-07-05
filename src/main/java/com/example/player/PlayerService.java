@@ -9,10 +9,7 @@
 
 package com.example.player;
 
-import com.example.player.Player;
-import com.example.player.PlayerRepository;
-
-// Don't modify the below code
+import java.util.*; 
 
 public class PlayerService implements PlayerRepository {
 
@@ -32,8 +29,8 @@ public class PlayerService implements PlayerRepository {
         team.put(11, new Player(11, "Bob", 25, "Batsman"));
     }
 
-    // Don't modify the above code
-
-    // Write your code here
-
+    @Override
+    public List<Player> getPlayersData() {
+        return new ArrayList<>(team.values());
+    }
 }
