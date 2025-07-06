@@ -6,4 +6,5 @@ public interface PlayerRepository{
     List<Player> getPlayersData();
     Player addPlayer(Player player);
     Player getPlayerData(int playerId);
+    Player updatePlayerData(int playerId,Player player);
 }
