@@ -7,4 +7,5 @@ public interface PlayerRepository{
     Player addPlayer(Player player);
     Player getPlayerData(int playerId);
     Player updatePlayerData(int playerId,Player player);
+    void deletePlayerData(int playerId);
 }
