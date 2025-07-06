@@ -10,6 +10,8 @@
 package com.example.player;
 import com.example.player.PlayerRepository;
 import java.util.*; 
+import org.springframework.web.server.ResponseStatusException;
+import org.springframework.http.HttpStatus;
 
 public class PlayerService implements PlayerRepository {
 
@@ -39,6 +41,14 @@ public class PlayerService implements PlayerRepository {
         player.setPlayerId(uniqueId);
         team.put(uniqueId, player);
         uniqueId++;
+        return player;
+    }
+    @Override
+    public Player getPlayerData(int playerId){
+        Player player = team.get(playerId);
+        if(player==null){
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        }
         return player;
     }
 }
